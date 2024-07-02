@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Freight Big Pro;
+}
+
+main {
+  background-color: white;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#loader {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+}
+
+#loader video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 6;
+}
+
+#yellow1 {
+  background-color: #f5e41b;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 8;
+}
+
+#yellow2 {
+  background-color: #f5e41b;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 7;
+}
+
+#loader h1 {
+  font-size: 6.9vw;
+  line-height: 5vw;
+  font-weight: 300;
+  letter-spacing: -3px;
+  color: white;
+  position: relative;
+  z-index: 9;
+  text-align: center;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  padding-left: 60px;
+  padding-top: 35px;
+  z-index: 10;
+}
+
+nav svg path {
+  fill: black;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5e41b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+
+#page1 h1 {
+  font-size: 6.9vw;
+  line-height: 5vw;
+  font-weight: 300;
+  letter-spacing: -3px;
+  text-align: center;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-shrink: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.elem {
+  width: 100%;
+  position: relative;
+}
+
+.elem h2 {
+  font-size: 6.8vw;
+  font-weight: 100;
+  position: relative;
+  z-index: 9;
+  line-height: 5.2vw;
+  cursor: pointer;
+}
+
+.moving-in h5 {
+  display: inline-block;
+  text-transform: uppercase;
+  padding-right: 30px;
+  color: black;
+}
+
+.moving {
+  background-color: #f5e41b;
+  font-size: 20px;
+  padding: 1px;
+  font-weight: 400;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 48%;
+  transition: all ease 0.5s;
+  transform: translate(0, -50%);
+  opacity: 0;
+}
+
+.blur {
+  background: linear-gradient(#f5e31be8, #f5e41b, #f5e31be8);
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  box-shadow: 10px 0px 20px 20px #f5e41b, -10px 0px 20px 20px #f5e41b;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.moving-in {
+  display: inline-block;
+  animation: moving 8s linear 0s infinite;
+}
+
+.elem:hover .moving {
+  opacity: 1;
+}
+
+.elem:hover .had2 {
+  color: black;
+  font-style: italic;
+}
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+
+.img-container {
+  width: 100%;
+  padding-top: 2vh;
+  padding-left: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vh;
+}
+
+.img-div {
+  /* height: 35vw; */
+  width: 30vw;
+  overflow:hidden;
+  position: relative;
+  margin: 3vh;
+  margin-left: 0px;
+  z-index: 2;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.116);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+  transition: all ease 0.4s;
+  z-index: 5;
+}
+
+.overlay p {
+  font-size: 7vh;
+  font-weight: 500;
+  color: white;
+  line-height: 7vh;
+  opacity: 0;
+}
+
+.img-div:hover .overlay p {
+  opacity: 1;
+}
+
+.img-div:hover .overlay{
+  background-color: black;
+}
+
+.img-div:hover img{
+  scale:1.1;
+}
+
+.img-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.4s;
+}
+
+.line{
+  width:31%;
+  margin: 5px;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  line-height: 3vh;
+  background-color: white;
+  padding: 5px;
+}
+
+.top h2{
+  cursor: pointer;
+  font-size: 4vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+
+.top i{
+  font-size: 5vh;
+}
+
+.footer{
+  height: 20vh;
+  width:100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 4vw;
+  color:white;
+  align-items: center;
+}
+
+.FOOT{
+  display: flex;
+  width:30%;
+  justify-content: space-between;
+}
